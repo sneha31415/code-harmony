@@ -1,1 +1,4 @@
-/venv
+
+/venv/
+/ddsp/vocals_preprocessed.wav
+/code-harmony/ddsp/vocals_preprocessed.wav
