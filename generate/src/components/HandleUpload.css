@@ -1,0 +1,52 @@
+/* Upload Section Container */
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: #444;*/
+    padding: 1.5rem;
+    border-radius: 8px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Label for the Upload Button */
+  .upload-label {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(90deg, #0ff, #f0f);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #f0f;
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* Hide the File Input */
+  .upload-input {
+    display: none;
+  }
+  
+  /* Hover Effect for Upload Button */
+  .upload-label:hover {
+    box-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #f0f;
+    transform: scale(1.05);
+  }
+  
+  /* Uploaded File Info */
+  .file-info {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-shadow: 0 0 3px #0ff;
+  }
+  

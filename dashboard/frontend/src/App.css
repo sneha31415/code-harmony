@@ -1,0 +1,13 @@
+.Dashboard {
+  display:flex;
+  gap: 20px;
+  color: white;
+}
+
+.Dashboard-content {
+  background-color: #393737;
+  border-radius: 20px;
+  flex: 1;
+  padding: 20px;
+  gap: 1.5rem;
+}

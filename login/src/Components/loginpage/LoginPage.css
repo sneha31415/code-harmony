@@ -90,3 +90,26 @@
     background:white;
     color:rgb(40, 39, 39);
 }
+
+.center-submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .submit-button {
+    background-color:#98DED9; /* Light blue background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(152, 216, 239, 0.6);
+}
+
+.submit-button:hover {
+    background-color: #7ecde9; /* Slightly darker blue */
+    box-shadow: 0 0 20px rgba(152, 216, 239, 1);
+}

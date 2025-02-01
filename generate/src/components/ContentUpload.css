@@ -1,0 +1,230 @@
+/* .generate-section {
+    padding:10px;
+    width:100%;
+    height:100%;
+}
+.generate-top {
+    display:flex;
+    width:100%;
+    height:100%;
+    padding:10px;
+}
+ .upload-left {
+    padding: 10px;
+    width:100%;
+    height:100%;
+ }
+ .upload-left .choose-instrument{
+    background-color: azure;
+    width:100%;
+    height:100%;
+ }
+ .upload-left .generate {
+    background-color: blueviolet;
+    width:100%;
+    height:100%;
+ }
+
+ .upload {
+    background-color: beige;
+    width:100%;
+    height:100%;
+    padding: 10px;
+ }
+
+ .generated-preview {
+    background-color: aqua;
+ }
+ .generated-track {
+    background-color: aquamarine;
+ }
+ .buttons {
+    background-color: aquamarine;
+ }
+
+ .previous-creation {
+    background-color: brown;
+    
+ }
+
+ .container {
+    display:flex;
+    width:100%;
+    height:100%;
+    padding :10px;
+ }
+*/
+
+/* General Styling */
+
+  
+  .container {
+    display: grid;
+    grid-template-areas:
+      "generate-section previous-creation"
+      "generated-preview previous-creation";
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    
+    box-sizing: border-box;
+  }
+  
+  /* Generate Section */
+  .generate-section {
+    grid-area: generate-section;
+    display: flex;
+    flex-direction: column;
+    
+    
+    gap: 1rem;
+  }
+  
+  .generate-top {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    border: 1px solid white;
+    border-radius: 12px;      /* Rounded corners */
+    padding:20px;
+    background-color: #1e1e1e;
+  }
+  
+
+  
+  .upload-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .choose-instrument {
+    background-color: rgb(71,71,71);
+    padding:40px;
+    color:#0178ff;
+  }
+  
+  .choose-instrument h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .choose-instrument select {
+    background-color: #666;
+    margin-top:1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    width:100%;
+    color: white;
+  }
+
+  .generate {
+    align-self: center;
+  }
+  
+  .generate .gen{
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:black;  /* Neon Cyan Text */
+    background-color: #0178ff;/* Transparent background for a glow effect */
+    border: 2px solid #0178ff; /* Neon Cyan Border */
+    border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #0178ff, 0 0 10px #0178ff, 0 0 20px #0178ff, 0 0 30px #0178ff;
+    transition: 0.3s ease-in-out;
+    
+  }
+  
+  .generate .gen:hover {
+    background-color: #0ff; /* Neon Cyan Background */
+    color: #333; /* Dark text for contrast */
+    box-shadow: 0 0 10px #0ff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    transform: scale(1.1); /* Slight scale-up effect */
+    border: 2px solid #0ff;
+  }
+  
+  .generate .gen:active {
+    box-shadow: 0 0 15px #0ff, 0 0 30px #00ffff, 0 0 45px #00ffff;
+    transform: scale(1.05); /* Slight shrink for a "press" effect */
+  }
+  
+  
+  .upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c2c2c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    border:2px dashed white;
+    padding:100px;
+  }
+  
+  /* Generated Preview */
+  .generated-preview {
+    grid-area: generated-preview;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .generated-track {
+    background:#1e1e1e;
+    border: 1px solid white;
+    text-align: center;
+    
+    border-radius: 8px;
+  }
+  
+  .handle-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  
+  .handle-buttons .action {
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color:#2c2c2c;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    gap:8px;
+  }
+  
+  .handle-buttons .action:hover {
+    background-color: #555;
+  }
+  
+  /* Previous Creation Section */
+  .previous-creation {
+    grid-area: previous-creation;
+    
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border:1px solid white;
+    text-align: center;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-areas:
+        "generate-section"
+        "generated-preview"
+        "previous-creation";
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
