@@ -9,6 +9,8 @@ const router = express.Router();
 
 // Route for processing audio
 router.post('/process', authMiddleware, upload.single('audio'), (req, res, next) => {
+    console.log('Request received:', req.file, req.body); // Debugging
+    console.log('Authorization header:', req.headers['authorization']); // Debugging
     console.log('Route hit: /process');
     console.log('File received:', req.file);
     console.log('Body received:', req.body);

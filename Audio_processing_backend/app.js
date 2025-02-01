@@ -37,7 +37,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); // Enable CORS for frontend communication
+ // Enable CORS for frontend communication
+ app.use(cors({
+  origin: 'http://localhost:3001',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
 app.use('/uploads', express.static('uploads')); // Serve uploaded files

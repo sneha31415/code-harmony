@@ -4,15 +4,44 @@ const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { name, email, password } = req.body;
+       
+
+        const user = await User.findOne({ email });
+if (user) {
+    return res.status(409).json({
+        message: "User already exists. Please log in.",
+        success: false
+    });
+}
+
+        const userModel = new User({ name, email, password });
+        // userModel.password = await bcrypt.hash(password, 10);
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ username, email, password: hashedPassword });
-        await user.save();
-        res.status(201).json({ message: 'User created successfully' });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    if (!hashedPassword) {
+        return res.status(500).json({
+            message: "Error while hashing the password",
+            success: false
+        });
     }
-};
+userModel.password = hashedPassword;
+
+        await userModel.save();
+        res.status(201)
+            .json({
+                message: "Signup Successfully",
+                success: true
+            })
+
+    }catch (err) {
+        
+        console.error("Signup Error:", err.message); // Log the error for debugging
+    res.status(500).json({
+        message: "Internal Server Error",
+        success: false
+    });
+    }
+}
 
 exports.login = async (req, res) => {
     try {
@@ -21,8 +50,19 @@ exports.login = async (req, res) => {
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
-        res.json({ token });
+        const jwtToken = jwt.sign(
+            { email: user.email, _id: user._id.toString()},
+            process.env.JWT_SECRET,
+            { expiresIn: '24h'}
+        )
+        res.status(200)
+        .json({
+            message: "Login Successfully",
+            success: true,
+            jwtToken,
+            email,
+            name: user.name
+        });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

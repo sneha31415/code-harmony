@@ -5,11 +5,7 @@ const UserModel = require('../Models/User');
 const signup = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        // const user = await UserModel.findOne({ email });
-        // if(user) {
-        //     return res.status(409)
-        //     .json({ message: 'User is already exist, you can login', success: false});
-        // }
+       
 
         const user = await UserModel.findOne({ email });
 if (user) {
@@ -38,11 +34,7 @@ userModel.password = hashedPassword;
             })
 
     }catch (err) {
-        // res.status(500)
-        // .json({
-        //     message: "Internal Server error",
-        //     success: false
-        // })
+        
         console.error("Signup Error:", err.message); // Log the error for debugging
     res.status(500).json({
         message: "Internal Server Error",
@@ -74,7 +66,7 @@ const jwtToken = jwt.sign(
     process.env.JWT_SECRET,
     { expiresIn: '24h'}
 )
-// localStorage.setItem('jwtToken', token);
+
         
         res.status(200)
             .json({
