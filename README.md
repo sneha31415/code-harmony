@@ -13,6 +13,7 @@
 - 📊 Dashboard with:
   - Previous conversions history  
   - Instrument usage pie chart
+- 🎧 Create and manage custom playlists of generated covers 
 - 📁 Clean and intuitive UI
 
 ## 🛠️ Tech Stack
