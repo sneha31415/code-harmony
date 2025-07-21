@@ -2,7 +2,9 @@
 # 🎶 Melodify - AI-Powered Instrumental Cover Generator
 
 **Melodify** is an AI-powered web application that transforms vocal tracks into instrumental covers. Built for music learners and enthusiasts, it allows users to extract vocals, generate instrument-specific covers, and customize tracks.
+
 ![Melodify Screenshot](WhatsApp Image 2025-07-19 at 23.42.21_d037ecc2.jpg)
+
 🎯 Designed and developed by **Team CodeHarmony** for Inheritance 2024.
 
 ## 🚀 Features
